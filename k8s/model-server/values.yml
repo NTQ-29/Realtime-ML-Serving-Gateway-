@@ -1,0 +1,24 @@
+# k8s/model-server/values.yaml
+# Default parameters applied to a deployed model container instance
+replicaCount: 2
+
+image:
+  repository: "ntq-29/model-server"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+# Parameters overridden per model to achieve asymmetric scaling boundaries
+resources:
+  limits:
+    cpu: "1000m"
+    memory: "1024Mi"
+  requests:
+    cpu: "200m"
+    memory: "256Mi"
+
+# Horizontal Pod Autoscaling limits based on live resource consumption
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 75
