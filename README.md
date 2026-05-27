@@ -56,5 +56,27 @@ Every model variant (XGBoost, LightGBM, PyTorch Neural Network) operates inside 
 ### 1. Launch Local Infrastructure Stacks
 Spin up the decoupled data and event layers using Docker Compose:
 ```bash
+
 # Start local Kafka, Zookeeper, and Redis engines
 docker-compose up -d
+
+├── .github/workflows/    # CI/CD Pipeline automation scripts (Linting & Testing)
+├── gateway/              # FastAPI Serving Gateway & Routing Strategy Engine
+│   ├── app.py            # API Entry Point & Validation Schema
+│   ├── router.py         # Deterministic A/B & Shadow router routing rules
+│   └── bandit.py         # Thompson Sampling mathematical engine
+├── features/             # Unified Feature Store definitions
+│   ├── feature_store/    # Feast core configuration profiles & schemas
+│   └── streaming/        # Kafka consumer workers syncing real-time features to Redis
+├── models/               # Isolated Model Container Application frameworks
+│   ├── xgboost/          # XGBoost service definitions and config maps
+│   ├── lightgbm/         # LightGBM service configuration structures
+│   └── neural/           # Neural network framework boundaries
+├── infra/                # Infrastructure as Code provisioning configurations
+│   └── environments/     # Environment parameter deployment files (dev.tfvars)
+├── k8s/                  # Kubernetes Helm deployment manifests
+│   ├── gateway/          # API Gateway deployment chart values
+│   └── model-server/     # Asymmetric scaling and HPA chart values
+├── tests/                # System automated integration test suites
+├── docker-compose.yml    # Local multi-service infrastructure orchestrator
+└── .gitignore            # Git exclusion mapping
