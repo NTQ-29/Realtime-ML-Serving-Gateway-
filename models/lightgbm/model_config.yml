@@ -1,0 +1,6 @@
+model:
+  id: "lightgbm_v1"
+  framework: "lightgbm"
+  version: "1.0.0"
+features:
+  expected_count: 3
