@@ -1,0 +1,10 @@
+# features/feature_store/feature_store.yaml
+project: adaptive_serving_features
+registry: s3://ntq-29-mlops-bucket/registry.pb
+provider: aws
+offline_store:
+  type: s3
+  region: us-west-2
+online_store:
+  type: redis
+  connection_string: redis://localhost:6379
