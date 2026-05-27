@@ -1,0 +1,7 @@
+# models/xgboost/model_config.yaml
+model:
+  id: "xgboost_v1"
+  framework: "xgboost"
+  version: "1.0.0"
+features:
+  expected_count: 3  # Matches customer_lifetime_value, session_click_count_30s, device_type
