@@ -1,0 +1,19 @@
+# k8s/gateway/values.yaml
+replicaCount: 3
+
+image:
+  repository: "ntq-29/serving-gateway"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 8000
+
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
