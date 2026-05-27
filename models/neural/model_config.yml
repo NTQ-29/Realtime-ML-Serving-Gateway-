@@ -1,0 +1,6 @@
+model:
+  id: "neural_net_v1"
+  framework: "pytorch"
+  version: "1.0.0"
+features:
+  expected_count: 3
